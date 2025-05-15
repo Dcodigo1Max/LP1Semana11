@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+
 namespace PlayerManager4
 {
     public interface IView
@@ -12,6 +14,10 @@ namespace PlayerManager4
         string MainMenu();
 
         Player AskForPlayerInfo();
+
+        void ShowPlayers(IEnumerable<Player> playersToList);
+
+        int AskForMinScore();
 
     }
 }
