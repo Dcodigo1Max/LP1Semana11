@@ -8,7 +8,7 @@ namespace PlayerManagerMV4
 {
     public class PlayersList : List<Player>
     {
-         private IEnumerable<Player> GetPlayersWithScoreGreaterThan(int minScore)
+        public IEnumerable<Player> GetPlayersWithScoreGreaterThan(int minScore)
         {
             // Cycle all players in the original player list
             foreach (Player p in this)

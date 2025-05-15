@@ -18,12 +18,12 @@ namespace PlayerManager4
         /// <param name="args">Not used.</param>
         private static void Main(string[] args)
         {
-              //Inicialize player comparers
+            //Inicialize player comparers
             // Initialize player comparers
-            IComparer<Player>compareByName = new CompareByName(true);
-            IComparer<Player>compareByNameReverse = new CompareByName(false);
+            IComparer<Player> compareByName = new CompareByName(true);
+            IComparer<Player> compareByNameReverse = new CompareByName(false);
 
-        // Initialize the player list with two players using collection
+            // Initialize the player list with two players using collection
             // initialization syntax
             PlayersList playerList = new PlayersList() {
                 new Player("Marco", 100),
@@ -33,12 +33,16 @@ namespace PlayerManager4
             Controller controller = new Controller(
                 playerList, compareByName, compareByNameReverse
             );
+
+
+            IView view = new UglyView();
+
+            controller.Run(view);
+
         }
+
+
+
     }
 
 }
-//Console.Error.WriteLine("\n>>> Unknown player order! <<<\n");
- // Create a new instance of the player listing program
-         //   Program prog = new Program();
-            // Start the program instance
-          //  prog.Start();

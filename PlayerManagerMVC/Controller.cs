@@ -32,7 +32,6 @@ namespace PlayerManager4
         {
 
 
-            this.view = view;
             this.playerList = playerList;
             this.compareByName = compareByName;
             this.compareByNameReverse = compareByNameReverse;
@@ -44,7 +43,7 @@ namespace PlayerManager4
         /// <summary>
         /// Start the player listing program instance
         /// </summary>
-        private void Run(IView view)
+        public void Run(IView view)
         {
             this.view = view;
             // We keep the user's option here
