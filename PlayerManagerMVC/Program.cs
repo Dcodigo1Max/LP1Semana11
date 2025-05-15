@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.Design;
+using PlayerManagerMV4;
 
 
 namespace PlayerManager4
@@ -11,7 +12,7 @@ namespace PlayerManager4
     public class Program
     {
         /// The list of all players
-        private readonly List<Player> playerList;
+        private readonly PlayersList playerList;
 
         // Comparer for comparing player by name (alphabetical order)
         private readonly IComparer<Player> compareByName;
@@ -42,7 +43,7 @@ namespace PlayerManager4
 
             // Initialize the player list with two players using collection
             // initialization syntax
-            playerList = new List<Player>() {
+            playerList = new PlayersList() {
                 new Player("Marco", 100),
                 new Player("Polo", 500)
             };
@@ -140,21 +141,7 @@ namespace PlayerManager4
         /// <returns>
         /// An enumerable of players with a score higher than the given value.
         /// </returns>
-        private IEnumerable<Player> GetPlayersWithScoreGreaterThan(int minScore)
-        {
-            // Cycle all players in the original player list
-            foreach (Player p in playerList)
-            {
-                // If the current player has a score higher than the
-                // given value....
-                if (p.Score > minScore)
-                {
-                    // ...return him as a member of the player enumerable
-                    yield return p;
-                }
-            }
-        }
-
+       
         /// <summary>
         ///  Sort player list by the order specified by the user.
         /// </summary>
