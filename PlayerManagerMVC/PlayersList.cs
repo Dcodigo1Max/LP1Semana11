@@ -2,9 +2,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using PlayerManager4;
 
-namespace PlayerManagerMV4
+
+namespace PlayerManagerMV
 {
     public class PlayersList : List<Player>
     {
