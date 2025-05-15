@@ -41,9 +41,13 @@ namespace PlayerManager4
             // Initialize the player list with two players using collection
             // initialization syntax
             playerList = new List<Player>() {
-                new Player("Best player ever", 100),
-                new Player("An even better player", 500)
+                new Player("Marco", 100),
+                new Player("Polo", 500)
             };
+
+            view = new UglyView();
+
+
         }
 
         /// <summary>
@@ -78,7 +82,7 @@ namespace PlayerManager4
                         SortPlayerList();
                         break;
                     case "0":
-                        Console.WriteLine("Bye!");
+                       view.ShowGoodbyeMessage();
                         break;
                     default:
                         Console.Error.WriteLine("\n>>> Unknown option! <<<\n");
