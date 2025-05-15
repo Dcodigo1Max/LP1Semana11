@@ -29,8 +29,10 @@ namespace PlayerManager4
                 new Player("Marco", 100),
                 new Player("Polo", 500)
             };
-           
 
+            Controller controller = new Controller(
+                playerList, compareByName, compareByNameReverse
+            );
         }
     }
 

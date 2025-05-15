@@ -21,20 +21,17 @@ namespace PlayerManager4
         private readonly IComparer<Player> compareByNameReverse;
 
 
-        private readonly IView view;
+        private IView view;
 
 
-        /// <summary>
-        /// Creates a new instance of the player listing program.
-        /// </summary>
-        private Controller(
-            IView view,
+
+        public Controller(
             PlayersList playerList,
             IComparer<Player> compareByName,
             IComparer<Player> compareByNameReverse)
         {
 
-            
+
             this.view = view;
             this.playerList = playerList;
             this.compareByName = compareByName;
@@ -42,11 +39,14 @@ namespace PlayerManager4
 
         }
 
+        
+
         /// <summary>
         /// Start the player listing program instance
         /// </summary>
-        private void Start()
+        private void Run(IView view)
         {
+            this.view = view;
             // We keep the user's option here
             string option;
 
