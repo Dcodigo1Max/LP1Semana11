@@ -147,20 +147,7 @@ namespace PlayerManager4
         /// </summary>
         private void SortPlayerList()
         {
-            PlayerOrder playerOrder;
-
-            Console.WriteLine("Player order");
-            Console.WriteLine("------------");
-            Console.WriteLine(
-                $"{(int)PlayerOrder.ByScore}. Order by score");
-            Console.WriteLine(
-                $"{(int)PlayerOrder.ByName}. Order by name");
-            Console.WriteLine(
-                $"{(int)PlayerOrder.ByNameReverse}. Order by name (reverse)");
-            Console.WriteLine("");
-            Console.Write("> ");
-
-            playerOrder = Enum.Parse<PlayerOrder>(Console.ReadLine());
+            PlayerOrder playerOrder = view.AskForPlayerOrder();
 
             switch (playerOrder)
             {
@@ -174,9 +161,11 @@ namespace PlayerManager4
                     playerList.Sort(compareByNameReverse);
                     break;
                 default:
-                    Console.Error.WriteLine("\n>>> Unknown player order! <<<\n");
+                    view.ShowInvalidOptionMessage();
                     break;
             }
         }
     }
 }
+
+//Console.Error.WriteLine("\n>>> Unknown player order! <<<\n");

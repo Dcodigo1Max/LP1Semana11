@@ -19,5 +19,7 @@ namespace PlayerManager4
 
         int AskForMinScore();
 
+        PlayerOrder AskForPlayerOrder();
+
     }
 }
