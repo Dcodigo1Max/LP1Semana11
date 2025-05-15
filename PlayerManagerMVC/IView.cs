@@ -4,6 +4,11 @@ namespace PlayerManagerMVC
     {
         
         void ShowGoodbyeMessage();
+       
+        void ShowInvalidOptionMessage();
+
+        void WaitForUser();
+        
 
 
     }

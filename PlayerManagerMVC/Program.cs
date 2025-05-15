@@ -85,7 +85,7 @@ namespace PlayerManager4
                        view.ShowGoodbyeMessage();
                         break;
                     default:
-                        Console.Error.WriteLine("\n>>> Unknown option! <<<\n");
+                        view.ShowInvalidOptionMessage();
                         break;
                 }
 
