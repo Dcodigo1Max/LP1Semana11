@@ -128,7 +128,7 @@ namespace PlayerManager4
 
             // Get players with score higher than the user-specified value
             playersWithScoreGreaterThan =
-                GetPlayersWithScoreGreaterThan(minScore);
+                playerList.GetPlayersWithScoreGreaterThan(minScore);
 
             // List all players with score higher than the user-specified value
             view.ShowPlayers(playersWithScoreGreaterThan);
