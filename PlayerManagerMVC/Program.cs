@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.Design;
+
 
 namespace PlayerManager4
 {
@@ -82,7 +84,7 @@ namespace PlayerManager4
                         SortPlayerList();
                         break;
                     case "0":
-                       view.ShowGoodbyeMessage();
+                        view.ShowGoodbyeMessage();
                         break;
                     default:
                         view.ShowInvalidOptionMessage();
@@ -90,9 +92,7 @@ namespace PlayerManager4
                 }
 
                 // Wait for user to press a key...
-                Console.Write("\nPress any key to continue...");
-                Console.ReadKey(true);
-                Console.WriteLine("\n");
+                view.WaitForUser();
 
                 // Loop keeps going until players choses to quit (option 4)
             } while (option != "0");
