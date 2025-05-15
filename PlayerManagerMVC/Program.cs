@@ -64,8 +64,7 @@ namespace PlayerManager4
             do
             {
                 // Show menu and get user option
-                ShowMenu();
-                option = Console.ReadLine();
+                option = view.MainMenu();
 
                 // Determine the option specified by the user and act on it
                 switch (option)
@@ -101,38 +100,14 @@ namespace PlayerManager4
         /// <summary>
         /// Shows the main menu.
         /// </summary>
-        private void ShowMenu()
-        {
-            Console.WriteLine("Menu");
-            Console.WriteLine("----\n");
-            Console.WriteLine("1. Insert player");
-            Console.WriteLine("2. List all players");
-            Console.WriteLine("3. List players with score greater than");
-            Console.WriteLine("4. Sort players");
-            Console.WriteLine("0. Quit\n");
-            Console.Write("Your choice > ");
-        }
+    
 
         /// <summary>
         /// Inserts a new player in the player list.
         /// </summary>
         private void InsertPlayer()
         {
-            // Variables
-            string name;
-            int score;
-            Player newPlayer;
-
-            // Ask for player info
-            Console.WriteLine("\nInsert player");
-            Console.WriteLine("-------------\n");
-            Console.Write("Name: ");
-            name = Console.ReadLine();
-            Console.Write("Score: ");
-            score = Convert.ToInt32(Console.ReadLine());
-
-            // Create new player and add it to list
-            newPlayer = new Player(name, score);
+            Player newPlayer = view.AskForPlayerInfo();
             playerList.Add(newPlayer);
         }
 
