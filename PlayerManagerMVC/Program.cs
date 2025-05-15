@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.Design;
-using PlayerManagerMV4;
 
 
-namespace PlayerManager4
+
+namespace PlayerManagerMV
 {
     /// <summary>
     /// The player listing program.
