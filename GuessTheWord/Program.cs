@@ -1,10 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
+using GuessTheWord;
 
 public class Program
 {
     private static void Main()
     {
+
+
+
+        //New 
+        //controler part to run program
+        //Controller.controller.Run(view);
+
+
+        //This needs a new dictionary paste
         IDictionary<string, string> wordsWithHints = new Dictionary<string, string>()
         {
             { "apple", "fruit" },
@@ -18,6 +28,8 @@ public class Program
             { "laptop", "object" },
             { "microscope", "scientific instrument" }
         };
+
+
 
         // Select a random word
         Random rand = new Random();
