@@ -3,52 +3,71 @@
 ```mermaid
 classDiagram
 
+IView <|..PlayerOrder
+IView <|.. UglyView
+UglyView <--Player
+UglyView < -- PlayerOrder
+PlayerList < -- Controller
+UglyView <-- Controller
+PlayerOrder <-- Controller
+Player <-- CompareByName
+Program o--Controller
+Program o--IView
+Program o--UglyView
+Program o--Player
+
+
 
 class IView{
     <<Interface>>
 
-    ShowGoodbyeMessage()
-    ShowInvalidOptionMessage()
-    WaitForUser()
-    string : MainMenu()
-    AskForPlayerInfo()
-    ShowPlayers(IEnumerable<Player> playersToList)
-    int : AskForMinScore()
-    AskForPlayerOrder()
+   public Interface IView()
 }
-
-
-class CompareByName{
-    -bool : ord
-    +raio
-    +Thrown
-    +Compare()
-}
-
 
 class UglyView{
 
-    +string : name
-    +int : score
-    +int : AskForMinScore()
-    +Player: AskForPlayerInfo()
-    +PlayerOrder : AskForPlayerOrder()
-    +string : MainMenu()
-    +ShowGoodbyeMessage()
-    +ShowInvalidOptionMessage()
-    +ShowPlayers(IEnumerable<Player> playersToList)
-    +WaitForUser()
+h
+
 }
 
+class CompareByName{
+
+    h
+    
+}
+
+class PlayerList{
+
+    g
+
+}
+
+class Controller{
+f
+    
+
+}
+
+class PlayerOrder{
+
+ <<enumeration>>
+
+}
 
 class Player{
 
-ToString()
-CompareTo(Player other)
+public class Player : IComparable(Player)
 
 }
 
-    
+class Program{
+
+f
+
+}
+
+
+
 
 
 
