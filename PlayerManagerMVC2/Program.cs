@@ -29,33 +29,42 @@ namespace PlayerManagerMVC2
 
                 string[] file_Lines = File.ReadAllLines(file_name);
 
+
+                PlayersList playerList = new PlayersList();
+
+
                 foreach (string line in file_Lines)
                 {
-                    
+                    string[] partes = line.Split(",");
+
+                    playerList.Add(new Player(partes[0], int.Parse(partes[1])));
                 }
+
+
+
+                //Inicialize player comparers
+                // Initialize player comparers
+                IComparer<Player> compareByName = new CompareByName(true);
+                IComparer<Player> compareByNameReverse = new CompareByName(false);
+
+                // Initialize the player list with two players using collection
+                // initialization syntax
+
+
+                Controller controller = new Controller(
+                    playerList, compareByName, compareByNameReverse
+                );
+
+
+                IView view = new UglyView();
+
+                controller.Run(view);
+
+
             }
 
-            
-            //Inicialize player comparers
-            // Initialize player comparers
-            IComparer<Player> compareByName = new CompareByName(true);
-            IComparer<Player> compareByNameReverse = new CompareByName(false);
-
-            // Initialize the player list with two players using collection
-            // initialization syntax
-            PlayersList playerList = new PlayersList() {
-                new Player("Marco", 100),
-                new Player("Polo", 500)
-            };
-
-            Controller controller = new Controller(
-                playerList, compareByName, compareByNameReverse
-            );
 
 
-            IView view = new UglyView();
-
-            controller.Run(view);
 
         }
 
