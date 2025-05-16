@@ -16,13 +16,26 @@ namespace GuessTheWord
 
         }
 
-        public void Run()
+        public void Run(IView view)
         {
+            //Stays on controller
+            string guess;
+            do
+            {
+                //Remove and put on BView
+                view.MenuLines();
+                guess = Console.ReadLine().Trim().ToLower();
 
+            if (guess != chosenWord)
+                view.ShowInvalidOptionMessage();
+            } while (guess != chosenWord);
+
+            view.WinLines();
+       
         }
 
 
-        
+
 
 
        
