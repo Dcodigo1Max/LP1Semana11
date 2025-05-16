@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 
 
-namespace PlayerManagerMV
+namespace PlayerManagerMVC2
 {
 
     public class UglyView : IView

@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace PlayerManagerMV
+namespace PlayerManagerMVC2
 {
     /// <summary>
     /// Compares players by name.
